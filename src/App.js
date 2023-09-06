@@ -23,8 +23,13 @@ class App extends Component {
           </p>
           <button
             onClick={() => {
-              this.setState({ name: { fName: 'Elon', lName: 'Musk' } });
-              console.log(this.state);
+              // this.setState({ name: { fName: 'Elon', lName: 'Musk' } });
+              // happening asynchronously.
+              // console.log(this.state);
+
+              this.setState(() => {
+                return { name: { fName: 'Elon', lName: 'Musk' } };
+              });
             }}
           >
             Change Name
